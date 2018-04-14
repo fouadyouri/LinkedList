@@ -1,7 +1,9 @@
 public class LinkedList {
+
     Node head;
 
     public void insert(int value) {
+
         Node node = new Node();
         node.data = value;
         node.next = null;
@@ -16,18 +18,22 @@ public class LinkedList {
                 temp = temp.next;
             }
             temp.next = node;
+
         }
     }
 
     public  void insertAtStart(int value) {
+
         Node node = new Node();
 
         node.data = value;
         node.next = head;
         head = node;
+
     }
 
     public void insertAt(int index, int value) {
+
         if(index == 0) {
             insertAtStart(value);
         }
@@ -40,6 +46,7 @@ public class LinkedList {
             for(int i = 0; i < index-1; i++){
                 temp = temp.next;
             }
+
             node.next = temp.next;
             temp.next = node;
         }
@@ -60,8 +67,10 @@ public class LinkedList {
             for (int i = 0; i < index-1; i++) {
                 temp = temp.next;
             }
+
             temp.next = temp.next.next;
         }
+
     }
 
     public int search(int value) {
@@ -72,15 +81,29 @@ public class LinkedList {
             temp = temp.next;
             index++;
         }
+
         return index;
     }
 
     public void print() {
+
         Node temp = head;
 
         while (temp != null) {
             System.out.print(temp.data + " ");
             temp = temp.next;
         }
+    }
+
+    public int findMax() {
+        Node temp = head;
+        int max = temp.data;
+
+        while (temp != null) {
+            if (temp.data > max)
+                max = temp.data;
+            temp = temp.next;
+        }
+        return max;
     }
 }
