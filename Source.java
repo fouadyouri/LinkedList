@@ -1,5 +1,7 @@
 public class Source {
 
+
+
     public static void main(String[] args) {
 
         LinkedList list = new LinkedList();
@@ -26,6 +28,9 @@ public class Source {
         System.out.println("\n == Add 100 at index 0 of Linked List ==");
         list.print();
 
+        int max = list.findMax();
+        System.out.println("\n Max element from Linked List " + max);
+
         list.deleteAt(2);
 
         System.out.println("\n == Remove 25 at index 2 of Linked List ==");
@@ -45,6 +50,9 @@ public class Source {
 
         System.out.println("\n == Remove 14 from Linked List ==");
         list.print();
+
+        max = list.findMax();
+        System.out.println("\n Max element from Linked List " + max);
 
     }
 }
